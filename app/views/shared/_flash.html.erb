@@ -1,0 +1,13 @@
+<% flash.each do |flash_type, message| %>
+	<div data-controller="flash">
+		<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded flex justify-between my-2" role="alert">
+			<span><%= message %></span>
+			<button class="" data-action="flash#dismiss">
+				<%# Icon remove %>
+				<i class='bx bxs-x-circle'></i>
+			</button>
+		</div>
+	</div>
+<% end %>
+
+

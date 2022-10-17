@@ -1,4 +1,18 @@
 # frozen_string_literal: true
+class TurboFailureApp < Devise::FailureApp
+	def respond
+	  if request_format == :turbo_stream
+		redirect
+	  else
+		super
+	  end
+	end
+  
+	def skip_format?
+	  %w(html turbo_stream */*).include? request_format.to_s
+	end
+  end
+  
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -9,12 +23,28 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+	# ==> Controller configuration
+	# Configure the parent class to the devise controllers.
+	config.parent_controller = 'TurboDeviseController'
+	
+	# ...
+	# ==> Navigation configuration
+	# ...
+	config.navigational_formats = ['*/*', :html, :turbo_stream]
+
+	# ==> Warden configuration
+  	# ...
+	config.warden do |manager|
+		manager.failure_app = TurboFailureApp
+	end
+
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '87467dcf1926d85d7ddc0b4e3787f00ba5c066c50e0688a5566979dee207c1d58f920728652e2be4ab70da6ff0ad4b0b274ba95ebe76cedcbe06dfc27c78ccab'
+  # config.secret_key = '344e3a0c3ee68ff31e1a6db959e69cb1b038cab1aafbb9325e85dda820985a9b54c25c7adff21fd0280a13bd1e213b51c502a25fe2e7fde0b2311976b0d36046'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +156,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'e3dee3fbbe112fef985cb5702752d09e72620efd95484f60afa17c8703a808b5ead5542e934a5342f5c8be0042c9a1d7deb434f2e40affa6297a74154ca9b836'
+  # config.pepper = 'ca77ae273850d7ed59e08c9f9f7da408c2a1ad947ccc7d2c88e27476a05b9abc51a4dd44773dfb9fc82d57a7fb3c8fd4171145368d413075f73e855b472e8708'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -225,6 +255,8 @@ Devise.setup do |config|
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
   config.reset_password_within = 6.hours
+
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.

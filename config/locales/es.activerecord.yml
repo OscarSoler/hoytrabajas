@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        email: "Correo Electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmar Contraseña"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "requerido"
+            password:
+              blank: "requerido"
+              too_short: "debe tener 6 caracteres mínimo"
+
