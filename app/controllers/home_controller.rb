@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def index
-  end
+	def index
+		@banks = Bank.order(:created_at)
+	end
 end
