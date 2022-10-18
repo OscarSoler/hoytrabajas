@@ -1,0 +1,12 @@
+<tr id="<%= dom_id bank %>">
+	<td class="table-td"><%= bank.name %></td>
+	<td class="table-td table-actions">
+		<%= link_to edit_bank_path(bank), data: { turbo_frame: 'modal'} do %>
+			<i class='bx bxs-edit text-xl text-secondary-500' ></i>
+		<% end %>
+
+		<%= link_to bank, method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" }  do %>	
+			<i class='bx bxs-trash text-xl text-red-400' ></i>
+		<% end %>
+	</td>
+</tr>

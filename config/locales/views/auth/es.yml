@@ -1,0 +1,5 @@
+es:
+  log_in: "Iniciar Sesión"
+  sign_up: "Registrarse"
+  logout: "Cerrar Sesión"
+  characters_minimum: "Caracteres mínimo"

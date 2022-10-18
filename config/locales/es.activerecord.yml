@@ -1,0 +1,47 @@
+es:
+  activerecord:
+    models:
+      user: "User"
+      bank: "Banco"
+      provider: "Proveedor"
+    attributes:
+      user:
+        email: "Correo Electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmar Contraseña"
+      bank:
+        name: "Nombre"
+      provider:
+        name: "Nombre"
+        nit: "Nit"
+        name_contact: "Nombre de Contacto"
+        phone_contact: "Teléfono de Contacto"
+        account_number: "Número de cuenta"
+        bank_id: "Banco"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "requerido"
+            password:
+              blank: "requerido"
+              too_short: "debe tener 6 caracteres mínimo"
+        bank:
+          attributes:
+            name:
+              blank: "requerido"
+              too_long: "máximo 50 caracteres"
+              too_short: "mínimo 2 caracteres"
+        provider:
+          attributes:
+            name:
+              blank: "requerido"
+            name_contact:
+              blank: "requerido"
+            account_number:
+              too_long: "máximo 15 caracteres"
+            phone_contact:
+              too_long: "máximo 10 caracteres"
+            nit:
+              invalid: "Nit inválido ej: 901362343-4"

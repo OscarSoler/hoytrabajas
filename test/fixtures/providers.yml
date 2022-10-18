@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: providers
+#
+#  id             :integer          not null, primary key
+#  name           :string
+#  nit            :string
+#  name_contact   :string
+#  phone_contact  :string
+#  account_number :string
+#  bank_id        :integer          not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+one:
+  name: MyString
+  nit: 901362343-4
+  name_contact: MyString
+  phone_contact: MyString
+  account_number: MyString
+  bank: one
+
+two:
+  name: MyString
+  nit: 901362343-4
+  name_contact: MyString
+  phone_contact: MyString
+  account_number: MyString
+  bank: two

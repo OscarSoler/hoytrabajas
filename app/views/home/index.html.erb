@@ -1,0 +1,34 @@
+
+<div class="flex justify-between gap-6 mt-4">
+	<section class="bg-primary-500 bg-opacity-5 w-1/4 rounded-lg shadow p-6">
+		<div class="flex justify-between items-center w-full pb-4">
+			<h1 class="font-semibold  text-2xl"><%= t("banks") %></h1>
+			<div class="flex justify-end">
+				<%= link_to t("add_bank"), new_bank_path, class:"btn-primary", data: { turbo_frame: "modal" }, remote: true , id: "new-bank" %>
+			</div>
+		</div>
+
+		<hr class="mb-4">
+
+		<%= turbo_frame_tag 'banks-table' do %>
+			<%= render 'banks/table' %>
+		<% end %>
+	</section>
+
+	<section class="bg-blue-100 bg-opacity-10 w-3/4 px-10 p-6 rounded-lg shadow">
+		<div class="flex justify-between items-center w-full pb-4">
+			<h1 class="font-semibold  text-2xl"><%= t("providers") %></h1>
+			
+			<div class="flex justify-end">
+				<%= link_to t("add_provider"), new_provider_path, class:"btn-primary", data: { turbo_frame: "modal" }, remote: true , id: "new-provider" %>
+			</div>
+		</div>
+
+		<hr class="mb-4">
+
+		<%= turbo_frame_tag 'providers-table' do %>
+			<%= render 'providers/table' %>
+		<% end %>
+	</section>
+</div>
+

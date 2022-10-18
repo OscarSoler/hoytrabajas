@@ -1,0 +1,15 @@
+current directory: /Users/oscarsoler/Documents/proyectos/hoytrabajas/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.13.0/ext/bootsnap
+/Users/oscarsoler/.rvm/rubies/ruby-3.0.0/bin/ruby -I /Users/oscarsoler/.rvm/rubies/ruby-3.0.0/lib/ruby/site_ruby/3.0.0 -r ./siteconf20221017-28746-y8oktv.rb extconf.rb
+creating Makefile
+
+current directory: /Users/oscarsoler/Documents/proyectos/hoytrabajas/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/oscarsoler/Documents/proyectos/hoytrabajas/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/oscarsoler/Documents/proyectos/hoytrabajas/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20221017-28746-6f9n61/bootsnap
