@@ -5,12 +5,12 @@
 	<body>
 		<main class="flex justify-center items-center min-h-screen bg-secondary-500">
 
-			<div class="flex flex-col p-10 shadow bg-white rounded-lg w-3/12">
+			<div class="flex flex-col p-10 shadow bg-white rounded-lg w-3/12 min-w-[390px]">
 				
 				<%= yield %>
 
 				<div id="flash" class="flash">
-					<%= render 'shared/flash' %>
+					<%= render 'shared/flash_devise' %>
 				</div>
 				
 			</div>
