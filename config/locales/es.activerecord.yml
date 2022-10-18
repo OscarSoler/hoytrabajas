@@ -33,3 +33,15 @@ es:
               blank: "requerido"
               too_long: "máximo 50 caracteres"
               too_short: "mínimo 2 caracteres"
+        provider:
+          attributes:
+            name:
+              blank: "requerido"
+            name_contact:
+              blank: "requerido"
+            account_number:
+              too_long: "máximo 15 caracteres"
+            phone_contact:
+              too_long: "máximo 10 caracteres"
+            nit:
+              invalid: "Nit inválido ej: 901362343-4"

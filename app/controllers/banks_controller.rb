@@ -64,18 +64,27 @@ class BanksController < ApplicationController
 
   # DELETE /banks/1 or /banks/1.json
   def destroy
-    @bank.destroy
+	
 
     respond_to do |format|
-		flash.now[:notice] = "Bank was successfully destroyed."
-		format.turbo_stream { 
-			render turbo_stream: [
-				turbo_stream.remove(@bank),
-				turbo_stream.update("flash", partial: "shared/flash")
-			]
-		}
-      	format.html { redirect_to banks_url, notice: "Bank was successfully destroyed." }
-      	format.json { head :no_content }
+		if @bank.destroy
+			flash.now[:notice] = "Bank was successfully destroyed."
+			format.turbo_stream { 
+				render turbo_stream: [
+					turbo_stream.remove(@bank),
+					turbo_stream.update("flash", partial: "shared/flash")
+				]
+			}
+			  format.html { redirect_to banks_url, notice: "Bank was successfully destroyed." }
+			  format.json { head :no_content }
+		else
+			flash.now[:error] = "Bank cannot be deleted has associated providers"
+			format.turbo_stream { 
+				render turbo_stream: [
+					turbo_stream.update("flash", partial: "shared/flash")
+				]
+			}
+		end
     end
   end
 
