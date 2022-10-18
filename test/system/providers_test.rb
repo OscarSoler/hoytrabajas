@@ -23,7 +23,7 @@ class ProvidersTest < ApplicationSystemTestCase
 		fill_in "Teléfono de Contacto", with: @provider.phone_contact
 		click_on "Crear Proveedor"
 
-		assert_text "Provider was successfully created"
+		assert_text "Proveedor fue creado con éxito."
 	end
 
 	test "should update Provider" do
@@ -39,13 +39,13 @@ class ProvidersTest < ApplicationSystemTestCase
 
 		click_on "Actualizar Proveedor"
 
-		assert_text "Provider was successfully updated"
+		assert_text "Proveedor se actualizó con éxito."
 	end
 
 	test "should destroy Provider" do
 		visit root_path
 		first('a[data-test=delete-provider]').click
 		accept_confirm
-		assert_text "Provider was successfully destroyed."
+		assert_text "Proveedor fue eliminado con éxito."
 	end
 end

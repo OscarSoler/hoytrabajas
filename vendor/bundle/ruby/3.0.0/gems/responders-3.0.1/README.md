@@ -34,11 +34,11 @@ does not contain errors, it will automatically set the flash message to
   flash:
     actions:
       create:
-        notice: "%{resource_name} was successfully created."
+        notice: "%{resource_name} fue creado con éxito."
       update:
-        notice: "%{resource_name} was successfully updated."
+        notice: "%{resource_name} se actualizó con éxito."
       destroy:
-        notice: "%{resource_name} was successfully destroyed."
+        notice: "%{resource_name} fue eliminado con éxito"
         alert: "%{resource_name} could not be destroyed."
 ```
 
@@ -179,7 +179,7 @@ class InvitationsController < ApplicationController
 end
 ```
 
-Now you would see the message `"name@example.com was successfully created"` instead of the default `"Invitation was successfully created."`
+Now you would see the message `"name@example.com was successfully created"` instead of the default `"Invitation fue creado con éxito."`
 
 ## Generator
 

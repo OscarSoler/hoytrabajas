@@ -26,14 +26,14 @@ class BanksController < ApplicationController
 
     respond_to do |format|
       if @bank.save
-		flash.now[:success] = "Bank was successfully created."
+		flash.now[:success] = "Banco fue creado con éxito."
 		format.turbo_stream { 
 			render turbo_stream: [
 				turbo_stream.update("flash", partial: "shared/flash"),	
 				turbo_stream.update('banks-table', partial: 'banks/table', locals: {banks: @banks})
 			]
 		}
-        format.html { redirect_to bank_url(@bank), notice: "Bank was successfully created." }
+        format.html { redirect_to bank_url(@bank), notice: "Bank fue creado con éxito." }
         format.json { render :show, status: :created, location: @bank }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,14 +46,14 @@ class BanksController < ApplicationController
   def update
     respond_to do |format|
       if @bank.update(bank_params)
-		flash.now[:notice] = "Bank was successfully updated."
+		flash.now[:notice] = "Banco se actualizó con éxito."
 		format.turbo_stream { 
 			render turbo_stream: [
 				turbo_stream.replace(@bank, partial: "banks/bank", locals: {bank: @bank}),
 				turbo_stream.update("flash", partial: "shared/flash")
 			]
 		}
-        format.html { redirect_to bank_url(@bank), notice: "Bank was successfully updated." }
+        format.html { redirect_to bank_url(@bank), notice: "Bank se actualizó con éxito." }
         format.json { render :show, status: :ok, location: @bank }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -68,14 +68,14 @@ class BanksController < ApplicationController
 
     respond_to do |format|
 		if @bank.destroy
-			flash.now[:notice] = "Bank was successfully destroyed."
+			flash.now[:notice] = "Banco fue eliminado con éxito"
 			format.turbo_stream { 
 				render turbo_stream: [
 					turbo_stream.remove(@bank),
 					turbo_stream.update("flash", partial: "shared/flash")
 				]
 			}
-			  format.html { redirect_to banks_url, notice: "Bank was successfully destroyed." }
+			  format.html { redirect_to banks_url, notice: "Bank fue eliminado con éxito" }
 			  format.json { head :no_content }
 		else
 			flash.now[:error] = "Bank cannot be deleted has associated providers"

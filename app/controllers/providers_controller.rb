@@ -26,14 +26,14 @@ class ProvidersController < ApplicationController
 
     respond_to do |format|
       if @provider.save
-		flash.now[:success] = "Provider was successfully created."
+		flash.now[:success] = "Proveedor fue creado con éxito."
 		format.turbo_stream { 
 			render turbo_stream: [
 				turbo_stream.update("flash", partial: "shared/flash"),	
 				turbo_stream.update('providers-table', partial: 'providers/table', locals: {providers: @providers})
 			]
 		}
-        format.html { redirect_to provider_url(@provider), notice: "Provider was successfully created." }
+        format.html { redirect_to provider_url(@provider), notice: "Proveedor fue creado con éxito." }
         format.json { render :show, status: :created, location: @provider }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,14 +46,14 @@ class ProvidersController < ApplicationController
   def update
     respond_to do |format|
       if @provider.update(provider_params)
-		flash.now[:notice] = "Provider was successfully updated."
+		flash.now[:notice] = "Proveedor se actualizó con éxito."
 		format.turbo_stream {
 			render turbo_stream: [
 				turbo_stream.replace(@provider, partial: "providers/provider", locals: {provider: @provider}),
 				turbo_stream.update("flash", partial: "shared/flash")
 			]
 		}
-        format.html { redirect_to provider_url(@provider), notice: "Provider was successfully updated." }
+        format.html { redirect_to provider_url(@provider), notice: "Provider se actualizó con éxito." }
         format.json { render :show, status: :ok, location: @provider }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -67,14 +67,14 @@ class ProvidersController < ApplicationController
     @provider.destroy
 
     respond_to do |format|
-		flash.now[:notice] = "Provider was successfully destroyed."
+		flash.now[:notice] = "Proveedor fue eliminado con éxito."
 		format.turbo_stream { 
 			render turbo_stream: [
 				turbo_stream.remove(@provider),
 				turbo_stream.update("flash", partial: "shared/flash")
 			]
 		}
-		format.html { redirect_to providers_url, notice: "Provider was successfully destroyed." }
+		format.html { redirect_to providers_url, notice: "Proveedor fue eliminado con éxito." }
 		format.json { head :no_content }
     end
   end

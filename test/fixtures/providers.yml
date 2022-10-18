@@ -15,7 +15,7 @@
 
 one:
   name: MyString
-  nit: MyString
+  nit: 901362343-4
   name_contact: MyString
   phone_contact: MyString
   account_number: MyString
@@ -23,7 +23,7 @@ one:
 
 two:
   name: MyString
-  nit: MyString
+  nit: 901362343-4
   name_contact: MyString
   phone_contact: MyString
   account_number: MyString

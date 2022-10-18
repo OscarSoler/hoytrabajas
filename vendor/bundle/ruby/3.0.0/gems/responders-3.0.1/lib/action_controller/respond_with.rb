@@ -102,7 +102,7 @@ module ActionController #:nodoc:
     #
     #     def create
     #       @user = User.new(params[:user])
-    #       flash[:notice] = 'User was successfully created.' if @user.save
+    #       flash[:notice] = 'User fue creado con éxito.' if @user.save
     #       respond_with(@user)
     #     end
     #
@@ -112,7 +112,7 @@ module ActionController #:nodoc:
     #       @user = User.new(params[:user])
     #       respond_to do |format|
     #         if @user.save
-    #           flash[:notice] = 'User was successfully created.'
+    #           flash[:notice] = 'User fue creado con éxito.'
     #           format.html { redirect_to(@user) }
     #           format.xml { render xml: @user }
     #         else
@@ -146,7 +146,7 @@ module ActionController #:nodoc:
     #   def create
     #     @project = Project.find(params[:project_id])
     #     @task = @project.comments.build(params[:task])
-    #     flash[:notice] = 'Task was successfully created.' if @task.save
+    #     flash[:notice] = 'Task fue creado con éxito.' if @task.save
     #     respond_with(@project, @task)
     #   end
     #
@@ -162,7 +162,7 @@ module ActionController #:nodoc:
     #
     #   def create
     #     @user = User.new(params[:user])
-    #     flash[:notice] = "User was successfully created." if @user.save
+    #     flash[:notice] = "User fue creado con éxito." if @user.save
     #
     #     respond_with(@user) do |format|
     #       format.html { render }

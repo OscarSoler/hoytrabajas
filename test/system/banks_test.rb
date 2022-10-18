@@ -20,7 +20,7 @@ class BanksTest < ApplicationSystemTestCase
 		fill_in "Nombre", with: @bank.name
 		click_on "Crear Banco"
 
-		assert_text "Bank was successfully created."
+		assert_text "Banco fue creado con éxito."
 	end
 
 	test "should update Bank" do
@@ -31,7 +31,7 @@ class BanksTest < ApplicationSystemTestCase
 		fill_in "Nombre", with: @bank.name
 		click_on "Actualizar Banco"
 
-		assert_text "Bank was successfully updated"
+		assert_text "Banco se actualizó con éxito."
 		
 	end
 
@@ -39,6 +39,6 @@ class BanksTest < ApplicationSystemTestCase
 		visit root_path
 		first('.bxs-trash').click
 		accept_confirm
-		assert_text "Bank was successfully destroyed"
+		assert_text "Banco fue eliminado con éxito"
 	end
 end
