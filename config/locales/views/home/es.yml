@@ -2,5 +2,8 @@ es:
   banks: "Bancos"
   providers: "Proveedores"
   add_bank: "Añadir Banco"
+  edit_bank: "Editar Banco"
   add_provider: "Añadir Proveedor"
   new_bank: "Nuevo Banco"
+  new_provider: "Nuevo Proveedor"
+  edit_provider: "Editar Proveedor"

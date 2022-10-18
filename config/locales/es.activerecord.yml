@@ -3,6 +3,7 @@ es:
     models:
       user: "User"
       bank: "Banco"
+      provider: "Proveedor"
     attributes:
       user:
         email: "Correo Electrónico"
@@ -10,6 +11,13 @@ es:
         password_confirmation: "Confirmar Contraseña"
       bank:
         name: "Nombre"
+      provider:
+        name: "Nombre"
+        nit: "Nit"
+        name_contact: "Nombre de Contacto"
+        phone_contact: "Teléfono de Contacto"
+        account_number: "Número de cuenta"
+        bank_id: "Banco"
     errors:
       models:
         user:

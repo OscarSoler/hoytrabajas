@@ -1,0 +1,36 @@
+<tr id="<%= dom_id provider %>">
+	<td class="table-td">
+		<%= provider.name %>
+	</td>
+
+	<td class="table-td">
+		<%= provider.nit %>
+	</td>
+
+	<td class="table-td">
+		<%= provider.name_contact %>
+	</td>
+
+	<td class="table-td">
+		<%= provider.phone_contact %>
+	</td>
+
+	<td class="table-td">
+		<%= provider.account_number %>
+	</td>
+
+	<td class="table-td">
+		<%= provider.bank.name %>
+	</td>
+
+	<td class="table-td table-actions">
+		<%= link_to edit_provider_path(provider), data: { turbo_frame: 'modal'}, "data-test" => "edit-provider"  do %>
+			<i class='bx bxs-edit text-xl text-secondary-500' ></i>
+		<% end %>
+
+		<%= link_to provider, method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" }, "data-test" => "delete-provider"  do %>	
+			<i class='bx bxs-trash text-xl text-red-400' ></i>
+		<% end %>
+	</td>
+	
+</tr>

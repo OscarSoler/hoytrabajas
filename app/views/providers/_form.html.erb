@@ -1,0 +1,51 @@
+<%= form_with(model: provider, class: "contents") do |form| %>
+	<% if provider.errors.any? %>
+		<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded justify-between mb-4">
+			<h2><%= pluralize(provider.errors.count, "errores") %>:</h2>
+
+			<ul class="text-sm list-disc pl-6">
+				<% provider.errors.each do |error| %>
+				<li><%= error.full_message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="grid grid-cols-2 gap-4 mt-4">
+		<div>
+			<%= form.label :name %>
+			<%= form.text_field :name, class: "field-input" %>
+		</div>
+
+		<div>
+			<%= form.label :nit %>
+			<%= form.text_field :nit, class: "field-input" %>
+		</div>
+
+		<div>
+			<%= form.label :name_contact %>
+			<%= form.text_field :name_contact, class: "field-input" %>
+		</div>
+
+		<div>
+			<%= form.label :phone_contact %>
+			<%= form.text_field :phone_contact, class: "field-input" %>
+		</div>
+
+		<div>
+			<%= form.label :account_number %>
+			<%= form.text_field :account_number, class: "field-input" %>
+		</div>
+
+		<div>
+			<%= form.label :bank_id %>
+			<%= form.collection_select(:bank_id, Bank.order("created_at DESC"), :id, :name, {include_blank: false}, {:multiple => false, class: "field-input"} ) %>
+		</div>
+	</div>
+	
+	<div class="mt-4">
+		<%= form.submit class: "btn-primary" %>
+	</div>
+
+
+<% end %>

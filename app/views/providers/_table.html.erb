@@ -1,0 +1,18 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th class="table-th">Nombre</th>
+			<th class="table-th">Nit</th>
+			<th class="table-th">Nombre de Contacto</th>
+			<th class="table-th">Teléfono de Contacto</th>
+			<th class="table-th"># Cuenta</th>
+			<th class="table-th">Banco</th>
+			<th class="table-th">Acciones</th>
+		</tr>
+	</thead>
+	<tbody id="providers">
+		<% @providers.each do |provider| %>
+			<%= render provider %>			
+		<% end %>
+	</tbody>
+</table>
