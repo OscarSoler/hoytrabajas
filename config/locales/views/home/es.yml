@@ -3,3 +3,4 @@ es:
   providers: "Proveedores"
   add_bank: "Añadir Banco"
   add_provider: "Añadir Proveedor"
+  new_bank: "Nuevo Banco"

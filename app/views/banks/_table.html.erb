@@ -1,0 +1,15 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th class="table-th">Nombre</th>
+			<th class="table-th">Acciones</th>
+		</tr>
+	</thead>
+	<tbody id="banks">
+		<% @banks.each do |bank| %>
+			<%= render bank %>
+			
+			
+		<% end %>
+	</tbody>
+</table>

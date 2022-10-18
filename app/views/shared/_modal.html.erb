@@ -1,0 +1,25 @@
+<%= turbo_frame_tag "modal" do %>
+	<%= tag.div data: {  controller: "modal", turbo_modal_target: "modal", action: "turbo:submit-end->modal#submitEnd keyup@window->modal#closeWithKeyboard"} do %>
+		<div  class="flex justify-center items-center bg-gray-700 backdrop-blur-[1px] bg-opacity-50  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full h-full">
+			<div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+				<!-- Modal content -->
+				<div class="relative bg-white shadow">
+					<!-- Modal header -->
+					<div class="flex justify-between items-center p-4 rounded-t border-b ">
+						<div class="modal-title h5"><%= title %> </div>
+						<%= button_tag  data: { action: "modal#hideModal" }, type: "button" do %>
+							<i class='bx bx-x-circle text-2xl text-secondary-500'></i>
+						<% end %>
+					</div>
+					<!-- Modal body -->
+					<div class="p-6 pt-0 space-y-6">
+						<%= yield %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+<% end %>
+
+
+

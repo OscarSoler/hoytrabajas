@@ -12,4 +12,19 @@
 	.field-input {
 		@apply bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-secondary-500 focus:border-secondary-500 block w-full p-3 mb-4;
 	}
+	.table {
+		@apply min-w-full;
+	}
+
+	.table-th {
+		@apply px-6 py-4 text-sm font-semibold leading-4 text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50;
+	}
+
+	.table-td {
+		@apply px-6 py-4 border-b border-gray-200 text-sm;
+	}
+
+	.table-actions {
+		@apply flex items-center space-x-6;
+	}
 }

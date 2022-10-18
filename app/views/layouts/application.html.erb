@@ -4,6 +4,12 @@
 
 	<body>
 		<%= render "shared/header" %>
+		<%= turbo_frame_tag "modal" %>
+		
+		<div id="flash" class="flash">
+			<%= render 'shared/flash' %>
+		</div>
+		
 		<main class="">
 			<div class="container mx-auto py-4">
 				<%= yield %>

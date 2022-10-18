@@ -2,11 +2,14 @@ es:
   activerecord:
     models:
       user: "User"
+      bank: "Banco"
     attributes:
       user:
         email: "Correo Electrónico"
         password: "Contraseña"
         password_confirmation: "Confirmar Contraseña"
+      bank:
+        name: "Nombre"
     errors:
       models:
         user:
@@ -16,4 +19,9 @@ es:
             password:
               blank: "requerido"
               too_short: "debe tener 6 caracteres mínimo"
-
+        bank:
+          attributes:
+            name:
+              blank: "requerido"
+              too_long: "máximo 50 caracteres"
+              too_short: "mínimo 2 caracteres"

@@ -13,32 +13,32 @@ class BanksTest < ApplicationSystemTestCase
 		assert_selector "h1", text: "Bancos"
 	end
 
-	# test "should create bank" do
-	# 	visit banks_url
-	# 	click_on "New bank"
+	test "should create bank" do
+		visit root_path
+		click_on "Añadir Banco"
 
-	# 	fill_in "Name", with: @bank.name
-	# 	click_on "Create Bank"
+		fill_in "Nombre", with: @bank.name
+		click_on "Crear Banco"
 
-	# 	assert_text "Bank was successfully created"
-	# 	click_on "Back"
-	# end
+		assert_text "Bank was successfully created."
+	end
 
-	# test "should update Bank" do
-	# 	visit bank_url(@bank)
-	# 	click_on "Edit this bank", match: :first
+	test "should update Bank" do
+		visit root_path
+		
+		first('.bxs-edit').click
+		
+		fill_in "Nombre", with: @bank.name
+		click_on "Actualizar Banco"
 
-	# 	fill_in "Name", with: @bank.name
-	# 	click_on "Update Bank"
+		assert_text "Bank was successfully updated"
+		
+	end
 
-	# 	assert_text "Bank was successfully updated"
-	# 	click_on "Back"
-	# end
-
-	# test "should destroy Bank" do
-	# 	visit bank_url(@bank)
-	# 	click_on "Destroy this bank", match: :first
-
-	# 	assert_text "Bank was successfully destroyed"
-	# end
+	test "should destroy Bank" do
+		visit root_path
+		first('.bxs-trash').click
+		accept_confirm
+		assert_text "Bank was successfully destroyed"
+	end
 end

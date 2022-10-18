@@ -22,9 +22,17 @@ class BanksController < ApplicationController
   # POST /banks or /banks.json
   def create
     @bank = Bank.new(bank_params)
+	@banks = Bank.order("created_at DESC")
 
     respond_to do |format|
       if @bank.save
+		flash.now[:success] = "Bank was successfully created."
+		format.turbo_stream { 
+			render turbo_stream: [
+				turbo_stream.update("flash", partial: "shared/flash"),	
+				turbo_stream.update('banks-table', partial: 'banks/table', locals: {banks: @banks})
+			]
+		}
         format.html { redirect_to bank_url(@bank), notice: "Bank was successfully created." }
         format.json { render :show, status: :created, location: @bank }
       else
@@ -38,6 +46,13 @@ class BanksController < ApplicationController
   def update
     respond_to do |format|
       if @bank.update(bank_params)
+		flash.now[:notice] = "Bank was successfully updated."
+		format.turbo_stream { 
+			render turbo_stream: [
+				turbo_stream.replace(@bank, partial: "banks/bank", locals: {bank: @bank}),
+				turbo_stream.update("flash", partial: "shared/flash")
+			]
+		}
         format.html { redirect_to bank_url(@bank), notice: "Bank was successfully updated." }
         format.json { render :show, status: :ok, location: @bank }
       else
@@ -52,8 +67,15 @@ class BanksController < ApplicationController
     @bank.destroy
 
     respond_to do |format|
-      format.html { redirect_to banks_url, notice: "Bank was successfully destroyed." }
-      format.json { head :no_content }
+		flash.now[:notice] = "Bank was successfully destroyed."
+		format.turbo_stream { 
+			render turbo_stream: [
+				turbo_stream.remove(@bank),
+				turbo_stream.update("flash", partial: "shared/flash")
+			]
+		}
+      	format.html { redirect_to banks_url, notice: "Bank was successfully destroyed." }
+      	format.json { head :no_content }
     end
   end
 

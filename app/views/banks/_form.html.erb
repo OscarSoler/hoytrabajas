@@ -1,22 +1,21 @@
 <%= form_with(model: bank, class: "contents") do |form| %>
   <% if bank.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
+		<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded justify-between mb-4">
+			<h2><%= pluralize(bank.errors.count, "errores") %>: </h2>
+			<ul class="text-sm list-disc pl-6">
+				<% bank.errors.each do |error| %>
+				<li><%= error.full_message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 
-      <ul>
-        <% bank.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  	<div class="my-5">
+		<%= form.label :name %>
+		<%= form.text_field :name, class: "field-input" %>
+  	</div>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
+	<div class="inline">
+		<%= form.submit class: "btn-primary" %>
+	</div>
 <% end %>
