@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 	end
 
 	def dashboard
-		
+		@banks = Bank.count
+		@providers = Provider.count
 	end
 end
