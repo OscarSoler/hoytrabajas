@@ -15,6 +15,14 @@ bundle install
 
 ```
 
+
+# Tecnologias Usadas (Principales)
+-   Ruby on Rails
+-   Stimulus
+-   Hotwire
+-   Tailwind
+-   Capybara
+
 # Proceso
 
 Análisis de requerimientos y wireframes
