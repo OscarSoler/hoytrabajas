@@ -1,24 +1,16 @@
-# README
+# HoyTrabajas Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Deploy in heroku:
+[Preview](https://cryptocurrency-pi.vercel.app/)
 
-Things you may want to cover:
+![What the](https://raw.githubusercontent.com/OscarSoler/cryptocurrency/master/screenshot.png)
 
-* Ruby version
+# Instalación
+Ejecuta en consola :
 
-* System dependencies
+```bash
+bundle install
 
-* Configuration
+./bin/dev
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
