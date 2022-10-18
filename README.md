@@ -28,7 +28,7 @@ Análisis de requerimientos y wireframes
 Interfaces Finales
 
 ![Login](https://raw.githubusercontent.com/OscarSoler/hoytrabajas/main/app/assets/images/auth.png) 
-![Signup](https://raw.githubusercontent.com/OscarSoler/hoytrabajas/main/app/assets/images/signup.png) 
+![Signup](https://raw.githubusercontent.com/OscarSoler/hoytrabajas/main/app/assets/images/sign_up.png) 
 ![Home](https://raw.githubusercontent.com/OscarSoler/hoytrabajas/main/app/assets/images/home.png) 
 ![Banco](https://raw.githubusercontent.com/OscarSoler/hoytrabajas/main/app/assets/images/bank.png) 
 ![Provider](https://raw.githubusercontent.com/OscarSoler/hoytrabajas/main/app/assets/images/provider.png) 
